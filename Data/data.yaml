@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['face']
+
+roboflow:
+  workspace: experiment-qzreu
+  project: face-s6q6k
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/experiment-qzreu/face-s6q6k/dataset/3
