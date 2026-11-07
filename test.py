@@ -23,10 +23,12 @@ def letterbox(image, target_size=640, color=(114, 114, 114)):
 def normalize_image(image):
     return image.astype(np.float32) / 255.0
 
+MIN_BOX_PX = 0  # 0 keeps boxes of any size (small faces on surveillance cameras)
+
 def valid_face_box(x1, y1, x2, y2, w, h):
     bw = x2 - x1
     bh = y2 - y1
-    if bw < 10 or bh < 10:
+    if bw < MIN_BOX_PX or bh < MIN_BOX_PX:
         return False
     return True
 
